@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akanksha Chougule | Portfolio</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <header>
+    <h1>Akanksha Chougule</h1>
+    <img src="new.jpg" alt="Akanksha Chougule" class="profile-img" />
+    <p>Data Analytics | Data Visualization | MySql | Frontend Development</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      B.Sc. Computer Science graduate and MCA student skilled in developing user-friendly web applications using React
+      and modern UI technologies. <br>
+      Proficient in SQL for efficient data management.<br>
+      Possess a strong analytical mindset and aspire to excel in Data Analytics.
+    </p>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h3>Sales Dashboard</h3>
+        <p>Developed an interactive Power BI dashboard for e-commerce sales analysis with insights on revenue, trends,
+          and top-performing products.</p>
+        <a href="https://github.com/Akanksha418/power-bi-dashboards">View Project</a>
+      </div>
+      <div class="project-card">
+        <h3>Java Mini Projects</h3>
+        <p>Showcased Java mini-projects including a basic calculator and a GUI-based to-do list application.</p>
+        <a href="https://github.com/Akanksha418/Java-mini-projects">View Project</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <form id="contactForm" action="/contact" class="contact-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required>
+
+      <label for="message">Message:</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <script>
+      // ContactForm Listener
+      document.addEventListener('DOMContentLoaded', function () {
+          const form = document.getElementById('contactForm');
+
+          form.addEventListener('submit', function (event) {
+              event.preventDefault();
+
+              const name = document.getElementById('name').value;
+              const email = document.getElementById('email').value;
+              const message = document.getElementById('message').value;
+
+              // Make a POST request to your server for form submission
+              fetch('/contact', {
+                  method: 'POST',
+                  headers: {
+                      'Content-Type': 'application/json',
+                  },
+                  body: JSON.stringify({ name, email, message }),
+              })
+              .then((response) => response.json())
+              .then((data) => {
+                  if (data.success) {
+                      alert('Message Submitted Successfully!');
+                      form.reset(); // Reset the form after successful submission
+                  } else {
+                      alert('Error: ' + data.message);
+                  }
+              })
+              .catch((error) => console.error('Error:', error));
+          });
+      });
+  </script>
+
+
+    <p>Email: chouguleakaanksha24@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/Akanksha418">Akanksha418</a></p>
+    <p>LinkedIn: <a href="https://www.linkedin.com/in/akanksha-chougule-2525692aa/">Akanksha Chougule</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Akanksha Chougule. All rights reserved.</p>
+  </footer>
+
+</body>
+
+</html>
