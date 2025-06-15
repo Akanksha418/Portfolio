@@ -9,11 +9,10 @@
 </head>
 
 <body>
-
   <header>
-    <h1>Akanksha Chougule</h1>
-    <img src="new.jpg" alt="Akanksha Chougule" class="profile-img" />
-    <p>Data Analytics | Data Visualization | MySql | Frontend Development</p>
+    <div class="logo">
+      <h1 style="color: red;">TRON <span style="color: #fff;">SOFTECH</span></h1>
+    </div>
     <nav>
       <a href="#about">About</a>
       <a href="#projects">Projects</a>
@@ -21,92 +20,115 @@
     </nav>
   </header>
 
-  <section id="about">
-    <h2>About Me</h2>
-    <p>
-      B.Sc. Computer Science graduate and MCA student skilled in developing user-friendly web applications using React
-      and modern UI technologies. <br>
-      Proficient in SQL for efficient data management.<br>
-      Possess a strong analytical mindset and aspire to excel in Data Analytics.
-    </p>
-  </section>
-
-  <section id="projects">
-    <h2>Projects</h2>
-    <div class="projects">
-      <div class="project-card">
-        <h3>Sales Dashboard</h3>
-        <p>Developed an interactive Power BI dashboard for e-commerce sales analysis with insights on revenue, trends,
-          and top-performing products.</p>
-        <a href="https://github.com/Akanksha418/power-bi-dashboards">View Project</a>
-      </div>
-      <div class="project-card">
-        <h3>Java Mini Projects</h3>
-        <p>Showcased Java mini-projects including a basic calculator and a GUI-based to-do list application.</p>
-        <a href="https://github.com/Akanksha418/Java-mini-projects">View Project</a>
+  <main>
+    <div class="profile">
+      <img src="new.jpg" alt="Akanksha Chougule" class="profile-img" />
+      <div class="profile-text">
+        <h1>Akanksha Chougule</h1>
+        <p>Data Analytics | Data Visualization Tools | Data Cleaning | Python | Frontend Development</p>
       </div>
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <form id="contactForm" action="/contact" class="contact-form">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" required>
+    <section id="about" class="about">
+      <h2>About Me</h2>
+      <p>
+        B.Sc. Computer Science graduate and MCA student skilled in developing user-friendly web applications using React
+        and modern UI technologies.<br>
+        Proficient in SQL for efficient data management.<br>
+        Possess a strong analytical mindset and aspire to excel in Data Analytics.
+      </p>
+    </section>
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" required>
+    <section id="projects" class="project-section">
+      <h2>Projects</h2>
+      <div class="projects">
+        <div class="project-card">
+          <h3>Sales Dashboard</h3>
+          <p>Developed an interactive Power BI dashboard for e-commerce sales analysis with insights on revenue, trends,
+            and top-performing products.</p>
+          <a href="https://github.com/Akanksha418/power-bi-dashboards" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Java Mini Projects</h3>
+          <p>Showcased Java mini-projects including a basic calculator and a GUI-based to-do list application.</p>
+          <a href="https://github.com/Akanksha418/Java-mini-projects" target="_blank">View Project</a>
+        </div>
+        <div class="project-card">
+          <h3>Weather App</h3>
+          <p>JavaScript learning repository featuring hands-on projects, including a weather app built with real-time API integration.</p>
+          <a href="https://github.com/Akanksha418/Java_Script_Study" target="_blank">View Project</a>
+        </div>
+      </div>
+    </section>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" required></textarea>
+    <section id="contact" class="contact-section">
+      <h2>Contact</h2>
 
-      <button type="submit">Send Message</button>
-    </form>
+      <div class="contact">
+        <form id="contactForm" action="/contact" class="contact-form">
+          <h3>Contact Form</h3>
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" required>
 
-    <script>
-      // ContactForm Listener
-      document.addEventListener('DOMContentLoaded', function () {
-          const form = document.getElementById('contactForm');
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" required>
 
-          form.addEventListener('submit', function (event) {
-              event.preventDefault();
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" rows="5" required></textarea>
 
-              const name = document.getElementById('name').value;
-              const email = document.getElementById('email').value;
-              const message = document.getElementById('message').value;
+          <button type="submit">Send Message</button>
+        </form>
 
-              // Make a POST request to your server for form submission
-              fetch('/contact', {
-                  method: 'POST',
-                  headers: {
-                      'Content-Type': 'application/json',
-                  },
-                  body: JSON.stringify({ name, email, message }),
-              })
-              .then((response) => response.json())
-              .then((data) => {
-                  if (data.success) {
-                      alert('Message Submitted Successfully!');
-                      form.reset(); // Reset the form after successful submission
-                  } else {
-                      alert('Error: ' + data.message);
-                  }
-              })
-              .catch((error) => console.error('Error:', error));
-          });
-      });
-  </script>
-
-
-    <p>Email: chouguleakaanksha24@gmail.com</p>
-    <p>GitHub: <a href="https://github.com/Akanksha418">Akanksha418</a></p>
-    <p>LinkedIn: <a href="https://www.linkedin.com/in/akanksha-chougule-2525692aa/">Akanksha Chougule</a></p>
-  </section>
+        <div class="contact-cards">
+          <h3>Contact Details</h3>
+          <div class="contact-card">
+            <h3>Email</h3>
+            <a href="mailto:chouguleakanksha24@gmail.com">chouguleakanksha24@gmail.com</a>
+          </div>
+          <div class="contact-card">
+            <h3>GitHub</h3>
+            <a href="https://github.com/Akanksha418" target="_blank">Akanksha418</a>
+          </div>
+          <div class="contact-card">
+            <h3>LinkedIn</h3>
+            <a href="https://www.linkedin.com/in/akanksha-chougule" target="_blank">Akanksha Chougule</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
 
   <footer>
     <p>&copy; 2025 Akanksha Chougule. All rights reserved.</p>
   </footer>
 
-</body>
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const form = document.getElementById('contactForm');
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
 
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const message = document.getElementById('message').value;
+
+        fetch('/contact', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ name, email, message }),
+        })
+        .then(response => response.json())
+        .then(data => {
+          if (data.success) {
+            alert('Message Submitted Successfully!');
+            form.reset();
+          } else {
+            alert('Error: ' + data.message);
+          }
+        })
+        .catch(error => console.error('Error:', error));
+      });
+    });
+  </script>
+</body>
 </html>
